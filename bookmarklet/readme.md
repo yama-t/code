@@ -2,7 +2,7 @@
 GitHubのWikiページで目次を生成するためのブックマークレットです。
 ブックマークレットを連打しても1つしか生成されないようになっています。
 
-![tocSample](https://i.imgur.com/9IhJYJH.png)
+![toc_sample](https://i.imgur.com/MhDExzv.png)
 
 ## 使い方
 ### 設定
