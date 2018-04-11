@@ -22,7 +22,7 @@ javascript:(function() {
 		c.classList.add("toc-" + b);
 		var d = document.createElement("a");
 		c.appendChild(d);
-		d.innerHTML = "- " + a.childNodes[2].textContent;
+		d.innerHTML = "- " + a.textContent;
 		d.href = a.querySelectorAll('a')[0].href;
 		g.appendChild(c)
 	})
