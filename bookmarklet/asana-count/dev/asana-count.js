@@ -1,31 +1,27 @@
 (function() {
+  "use strict";
   r();
-
   // 実行本体
   function r() {
-
     // カラムを全取得
-    var $column = document.querySelectorAll('.BoardBody-column');
-    var columnArr = [].slice.call($column);
+    const $column = document.querySelectorAll('.BoardBody-column');
+    const columnArr = [].slice.call($column);
 
     // DONEのカラムのみを抽出
-    var $targetColumn = columnArr.filter(function (el) {
-      var $title = el.querySelector('.BoardColumnHeaderTitle');
+    const $targetColumn = columnArr.filter(el => {
+      const $title = el.querySelector('.BoardColumnHeaderTitle');
       if(!$title) {
         return false;
       }
       return $title.textContent === 'DONE';
     });
 
-    var $targetPill = $targetColumn[0].querySelectorAll('.Pill--small');
-    var pillArr = [].slice.call($targetPill);
-    var pointArr = pillArr.map(function (v) {
-      return v.textContent * 1;
-    });
-    var count = pointArr.length;
-    var points = pointArr.reduce(function (a, b) {
-      return a + b;
-    }, 0);
+    // ポイントを抽出
+    const $targetPill = $targetColumn[0].querySelectorAll('.Pill--small');
+    const pillArr = [].slice.call($targetPill);
+    const pointArr = pillArr.map(v => v.textContent * 1).filter(v => v);
+    const count = pointArr.length;
+    const points = pointArr.reduce((a, b) => a + b, 0);
 
     console.log('完了数：', count);
     console.log('ポイント合計', points);
