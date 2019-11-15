@@ -1,0 +1,2 @@
+# change-editable
+指定の要素にcontenteditable属性を付与し、編集可能にする
